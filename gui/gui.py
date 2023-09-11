@@ -30,10 +30,10 @@ while True:
         case "Delete":
             todos_to_delete = values['todos'][0]
             todos = functions.get_todos()
-            index = todos.index(todos_to_delete)
-            todos.pop(index)
+            todos.remove(todos_to_delete)
             functions.write_todos(todos)
             window['todos'].update(values=todos)
+            window['todo'].update(value='')
         case "todos":
             window['todo'].update(value=values['todos'][0])
         case "Exit":
